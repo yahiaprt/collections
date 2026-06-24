@@ -30,15 +30,15 @@ pipeline {
                 }
             }
         }
-                   post {
+
+    
+    }
+
+                       post {
         success {
             build job: 'newman-specific', wait: false
         }
     }
-    
-    }
-
-    
 
 
 
