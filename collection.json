@@ -1,0 +1,124 @@
+{
+  "info": {
+    "_postman_id": "678dfd88-25d3-48fe-b878-f66aa13bbd69",
+    "name": "k6collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50658001",
+    "_collection_link": "https://go.postman.co/collection/50658001-678dfd88-25d3-48fe-b878-f66aa13bbd69?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "get all brands",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "pm.test(\"Response time is less than 250ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(250);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.practicesoftwaretesting.com/brands",
+          "protocol": "https",
+          "host": [
+            "api",
+            "practicesoftwaretesting",
+            "com"
+          ],
+          "path": [
+            "brands"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add brands",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});\r",
+              "pm.test(\"Response time is less than 250ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(250);\r",
+              "});\r",
+              "pm.test(\"check body request\", function () {\r",
+              "console.log(\"hello\")\r",
+              "    let res_body = pm.response.json()\r",
+              "    let req_body = JSON.parse(pm.request.body.raw)\r",
+              "    pm.expect(res_body.name).to.equal(req_body.name)\r",
+              "    pm.expect(res_body.slug).to.equal(req_body.slug)    \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"name2000\",\r\n    \"slug\":\"slug2dgggg02034c4{{$randomFirstName}}\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.practicesoftwaretesting.com/brands",
+          "protocol": "https",
+          "host": [
+            "api",
+            "practicesoftwaretesting",
+            "com"
+          ],
+          "path": [
+            "brands"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
