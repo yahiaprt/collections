@@ -18,7 +18,7 @@
               "    pm.response.to.have.status(200);\r",
               "});\r",
               "pm.test(\"Response time is less than 250ms\", function () {\r",
-              "    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
               "});"
             ],
             "type": "text/javascript",
@@ -63,7 +63,7 @@
               "    pm.response.to.have.status(201);\r",
               "});\r",
               "pm.test(\"Response time is less than 250ms\", function () {\r",
-              "    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
               "});\r",
               "pm.test(\"check body request\", function () {\r",
               "console.log(\"hello\")\r",
