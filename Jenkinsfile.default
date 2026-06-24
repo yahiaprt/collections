@@ -5,32 +5,18 @@ pipeline {
             args '-u root --entrypoint='
         }
     }
- 
 
     stages {
-        stage('lancer le test') {
+        stage('Run Default Collection') {
             steps {
-                script {
-                  
-                        sh 'newman run collection.json'
-                 
-                     
-                    }
-                }
+                sh 'newman run collection.json'
             }
         }
-        
-
-
-
-     post {
-      success {
-        build job : 'newman-all-envs', wait: false
-      }
-
-
-      }
     }
 
-
- 
+    post {                               
+        success {
+            build job: 'newman-all-envs', wait: false
+        }
+    }
+}
