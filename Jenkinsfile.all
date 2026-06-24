@@ -19,8 +19,6 @@ pipeline {
         stage('lancer le test') {
             steps {
                 script {
-                   
-                    
                      if (params.default_execution_for_all) {
                         sh 'newman run collection.json'
                         sh 'newman run Collection-Multi.postman_collection.json -e e2e.postman_environment.json'
@@ -32,6 +30,16 @@ pipeline {
                 }
             }
         }
+                   post {
+        success {
+            build job: 'newman-specific', wait: false
+        }
     }
+    
+    }
+
+    
+
+
 
 
