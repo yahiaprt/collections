@@ -11,7 +11,7 @@ pipeline {
         booleanParam(name: 'execution_default_collection', defaultValue: false, description: 'Run only the default collection')
 
         choice(name: 'env', choices: ['e2e', 'preprod', 'test'], description: 'Pick env')
-        choice(name: 'collection_selection', choices: ['Collection-Multi.postman_collection', 'Collection-Test.postman_collection', 'collection'], description: 'Pick collection')
+      //  choice(name: 'collection_selection', choices: ['Collection-Multi.postman_collection', 'Collection-Test.postman_collection', 'collection'], description: 'Pick collection')
     }
 
     stages {
