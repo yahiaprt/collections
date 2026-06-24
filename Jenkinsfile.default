@@ -19,6 +19,16 @@ pipeline {
                 }
             }
         }
+
+      post {
+      success {
+        build job : 'jenkinsfile.all', wait: false
+      }
+
+
+      }
+
+
     }
 
 
