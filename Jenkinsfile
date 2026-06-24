@@ -20,7 +20,9 @@ pipeline {
                 script {
                     if (params.execution_default_collection) {
                         sh 'newman run collection.json'
-                    } else if (params.default_execution_for_all) {
+                    }
+                    
+                     if (params.default_execution_for_all) {
                         sh 'newman run collection.json'
                         sh 'newman run Collection-Multi.postman_collection.json -e e2e.postman_environment.json'
                         sh 'newman run Collection-Multi.postman_collection.json -e preprod.postman_environment.json'
