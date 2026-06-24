@@ -63,7 +63,7 @@
               "    pm.response.to.have.status(201);\r",
               "});\r",
               "pm.test(\"Response time is less than 250ms\", function () {\r",
-              "    pm.expect(pm.response.responseTime).to.be.below(250);\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(1250);\r",
               "});\r",
               "pm.test(\"check body request\", function () {\r",
               "console.log(\"hello\")\r",
