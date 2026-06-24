@@ -23,14 +23,14 @@ pipeline {
 
 
 
-
-    }
-
-
-      post {
+     post {
       success {
         build job : 'newman-all-envs', wait: false
       }
 
 
       }
+    }
+
+
+ 
