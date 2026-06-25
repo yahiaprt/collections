@@ -11,14 +11,16 @@ pipeline {
         booleanParam(name: 'execution_default_collection', defaultValue: false, description: 'Run only the default collection')
         booleanParam(name: 'excute_specific_collection', defaultValue: false, description: 'Run only the default collection')
         booleanParam(name: 'report', defaultValue: false, description: 'Enable Allure reporting')
-
         choice(name: 'env', choices: ['e2e', 'preprod', 'test'], description: 'Pick env')
     }
 
     stages {
-        stage('Install Allure Reporter') {
+        stage('Install Dependencies') {
             steps {
-                sh 'npm install -g newman-reporter-allure'
+                sh '''
+                    apk add --no-cache openjdk17-jre
+                    npm install -g newman-reporter-allure
+                '''
             }
         }
 
@@ -57,7 +59,6 @@ pipeline {
                         }
                     }
 
-                    // Fix permissions avant stash
                     if (params.report) {
                         sh 'chmod -R 777 allure-results'
                     }
