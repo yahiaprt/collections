@@ -11,6 +11,7 @@ pipeline {
         booleanParam(name: 'execution_default_collection', defaultValue: false, description: 'Run only the default collection')
         booleanParam(name: 'excute_specific_collection', defaultValue: false, description: 'Run only the default collection')
         booleanParam(name: 'report', defaultValue: false, description: 'Enable Allure reporting')
+
         choice(name: 'env', choices: ['e2e', 'preprod', 'test'], description: 'Pick env')
     }
 
@@ -18,7 +19,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    apk add --no-cache openjdk17-jre
+                    apt-get update && apt-get install -y default-jre
                     npm install -g newman-reporter-allure
                 '''
             }

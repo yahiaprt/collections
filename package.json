@@ -1,0 +1,16 @@
+{
+  "name": "newman-tests",
+  "version": "1.0.0",
+  "description": "Newman API tests with Allure reporting",
+  "scripts": {
+    "test": "newman run collection.json",
+    "test:allure": "newman run collection.json -r cli,allure --reporter-allure-export allure-results",
+    "test:e2e": "newman run Collection-Multi.postman_collection.json -e e2e.postman_environment.json -r cli,allure --reporter-allure-export allure-results",
+    "test:preprod": "newman run Collection-Multi.postman_collection.json -e preprod.postman_environment.json -r cli,allure --reporter-allure-export allure-results",
+    "test:test": "newman run Collection-Test.postman_collection.json -e test.postman_environment.json -r cli,allure --reporter-allure-export allure-results"
+  },
+  "dependencies": {
+    "newman": "^6.0.0",
+    "newman-reporter-allure": "^2.15.0"
+  }
+}
