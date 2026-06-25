@@ -1,0 +1,11 @@
+{
+    "Date": "Thu, 25 Jun 2026 09:38:13 GMT",
+    "Server": "Apache/2.4.52 (Ubuntu)",
+    "Cache-Control": "no-cache, private",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Expose-Headers": "Content-Disposition",
+    "Upgrade": "h2",
+    "Connection": "Upgrade, close",
+    "Transfer-Encoding": "chunked",
+    "Content-Type": "application/json"
+}

@@ -1,0 +1,13 @@
+pm.test("Status code is 201", function () {
+    pm.response.to.have.status(201);
+});
+pm.test("Response time is less than 250ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(2000);
+});
+pm.test("check body request", function () {
+console.log("hello")
+    let res_body = pm.response.json()
+    let req_body = JSON.parse(pm.request.body.raw)
+    pm.expect(res_body.name).to.equal(req_body.name)
+    pm.expect(res_body.slug).to.equal(req_body.slug)    
+});

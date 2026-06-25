@@ -1,0 +1,14 @@
+{
+    "Date": "Thu, 25 Jun 2026 09:39:12 GMT",
+    "Server": "Apache/2.4.52 (Ubuntu)",
+    "Cache-Control": "max-age=120, public",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Expose-Headers": "Content-Disposition",
+    "Upgrade": "h2",
+    "Connection": "Upgrade, close",
+    "ETag": "\"e0388f6fe4b60545f6025e103652a945-gzip\"",
+    "Vary": "Accept-Encoding",
+    "Content-Encoding": "gzip",
+    "Content-Length": "516",
+    "Content-Type": "application/json"
+}
